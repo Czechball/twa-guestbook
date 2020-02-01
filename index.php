@@ -6,11 +6,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 echo $gbook->verifyAdmin("admin", "password");
 $gbook->addPost("Jmeno", "Predmet", "Text");
 //$gbook->deletePost(1);
-$posts = $gbook->getPosts();
-foreach ($posts as $row) {
-	$row = json_decode(json_encode($row), true);
-    print "<p>" . $row["name"] . "-" . $row["subject"] ."<br/>". $row["text"]. "</p>";
-}
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -44,4 +39,12 @@ foreach ($posts as $row) {
 				</tr>
 			</table>
 		</form>
+		<?php 
+		$posts = $gbook->getPosts();
+		foreach ($posts as $row)
+		{
+		$row = json_decode(json_encode($row), true);
+    	print "<p>" . $row["name"] . "-" . $row["subject"] ."<br/>". $row["text"]. "</p>";
+		}
+		?>
 	</body>
