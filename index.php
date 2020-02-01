@@ -51,7 +51,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
     	{
         unset($_SESSION['username']);
         echo "Nesprávné údaje.";
-    }
+    	}
 		}
 
 		if (isset($_POST["logout"]))
@@ -59,8 +59,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			session_start();
         unset($_SESSION['username']);
         echo "Odhlášen.";
-    }
-		}
+    	}
 		?>
 		<h1>Guest book</h1>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
