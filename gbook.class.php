@@ -57,7 +57,9 @@ class gbook
             echo $e->getMessage();
     }
 
-}    public function deletePost($id)
+}    
+
+    public function deletePost($id)
     {
         try
         {
