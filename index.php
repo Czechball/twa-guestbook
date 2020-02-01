@@ -1,5 +1,6 @@
 <?php
 require_once "gbook.class.php";
+require_once "credentials.php";
 global $gbook;
-gbook = new gbook("192.168.1.120", "3337", "", "", "");
+gbook = new gbook($host, $port, $dbname, $user, $pass);
 ?>
