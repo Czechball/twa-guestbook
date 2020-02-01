@@ -30,7 +30,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		}
 		?>
 		<h1>Guest book</h1>
-		<form method="POST" action="<?php echo $_["SCRIPT_NAME"]; ?>">
+		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
 					<td align=right valign="top">Jméno</td>
