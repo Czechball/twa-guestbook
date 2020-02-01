@@ -19,7 +19,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 </head>
 	<body>
 		<?php
-		var_dump ($_POST["add"]);	
+		var_dump ($_POST);	
 		if (isset($_POST["add"]))
 		{
 			$name = $_POST["name"];
