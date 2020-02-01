@@ -70,6 +70,24 @@ class gbook
             echo $e->getMessage();
     }
 
+}    
+
+    public function getPosts()
+    {
+        try
+        {
+            $stmt = $this->conn->prepare("SELECT * FROM `gbook_2020` ORDER BY `date` DESC;");
+            $stmt->bindParam(':jmeno', $_POST['jmeno']);
+            $stmt->execute();
+            $dotaz = $stmt->fetchAll(PDO::FETCH_OBJ);
+            return $dotaz;
+        } catch (PDOException $e)
+        {
+            echo "Chyba čtení tabulky: ";
+            echo $e->getMessage();
+        }
+    }
+
 }
 }
 ?>
