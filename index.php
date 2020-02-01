@@ -105,7 +105,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		<h2>Administrace</h2>
 		<?php
-		if (isset($_SESSION['username']))
+		if (!isset($_SESSION['username']))
 		{
 
 		?>
