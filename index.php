@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "gbook.class.php";
 require_once "credentials.php";
 global $gbook;
@@ -34,6 +35,32 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			$gbook->deletePost($id);
 			echo "Příspěvek smazán.";
 		}
+
+		if (isset($_POST["login"]))
+		{
+			$user = $_POST["user"];
+			$password = $_POST["password"];
+
+			session_start();
+    	if ($gbook->verifyAdmin($user, $password))
+    	{
+        $_SESSION['username'] = $user;
+        echo "Přihlášen.";
+    	}
+    	else
+    	{
+        unset($_SESSION['username']);
+        echo "Nesprávné údaje.";
+    }
+		}
+
+		if (isset($_POST["logout"]))
+		{
+			session_start();
+        unset($_SESSION['username']);
+        echo "Odhlášen.";
+    }
+		}
 		?>
 		<h1>Guest book</h1>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
@@ -63,6 +90,10 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		$row = json_decode(json_encode($row), true);
     	print "<p><b>". $row["subject"] ."</b><br>". $row["text"] . "<br><span size=-1>". $row["name"]. ", " . $row["date"] . "</span><br>";
 
+		if (isset($_SESSION['username']))
+			{	
+
+
 		?>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<input type="hidden" name="id" value="<?php echo $row["id"] ?>">
@@ -70,6 +101,45 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</form>
 		</p>
 		<?php
+			}
+		}
+		?>
+		<h2>Administrace</h2>
+		<?php
+		if (isset($_SESSION['username']))
+		{
+
+		?>
+		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
+			<table margin="0" padding="2">
+				<tr>
+					<td align=right valign="top">Jméno</td>
+					<td align=left><input type="text" name="user"></td>
+				</tr>
+				<tr>
+					<td align=right valign="top">Heslo</td>
+					<td align=left><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td align=right valign="top"></td>
+					<td align=left><input type="submit" name="login" value="Přihlásit"></td>
+				</tr>
+			</table>
+		</form>
+		<?php
+		}
+		else
+		{
+			?>
+			<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
+			<table margin="0" padding="2">
+				<tr>
+					<td align=right valign="top"></td>
+					<td align=left><input type="submit" name="logout" value="Odhlásit"></td>
+				</tr>
+			</table>
+		</form>
+			<?php
 		}
 		?>
 	</body>
