@@ -44,7 +44,7 @@ $gbook->addPost("Jmeno", "Predmet", "Text");
 		foreach ($posts as $row)
 		{
 		$row = json_decode(json_encode($row), true);
-    	print "<p>" . $row["name"] . "-" . $row["subject"] ."<br/>". $row["text"]. "</p>";
+    	print "<p><b>". $row["subject"] ."</b><br>". $row["text"] . "<br><span size="-1">". $row["name"]. ", " . $row["date"] . "</span></p>";
 		}
 		?>
 	</body>
