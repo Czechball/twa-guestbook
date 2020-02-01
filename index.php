@@ -18,7 +18,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
-		<?
+		<?php
 		if isset($_POST["add"])
 		{
 			$name = $_POST["name"];
