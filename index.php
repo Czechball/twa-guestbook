@@ -5,6 +5,6 @@ global $gbook;
 $gbook = new gbook($host, $port, $dbname, $user, $pass);
 $gbook->addPost("Jmeno", "Predmet", "Text");
 $gbook->deletePost(1);
-$debug = $gbook->getPosts;
+$debug = $gbook->getPosts();
 var_dump($debug);
 ?>
