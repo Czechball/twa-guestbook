@@ -90,5 +90,10 @@ class gbook
         }
     }
 
+    public function verifyAdmin($name, $password)
+    {
+        return ($name == "admin" && $password == "password");
+    }
+
 }
 ?>
