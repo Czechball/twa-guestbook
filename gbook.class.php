@@ -57,6 +57,19 @@ class gbook
             echo $e->getMessage();
     }
 
+}    public function deletePost($id)
+    {
+        try
+        {
+            $stmt = $this->conn->prepare("DELETE FROM `gbook_2020` WHERE id = :id;");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+    }
+
 }
 }
 ?>
