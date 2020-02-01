@@ -3,8 +3,8 @@ require_once "gbook.class.php";
 require_once "credentials.php";
 global $gbook;
 $gbook = new gbook($host, $port, $dbname, $user, $pass);
-echo $gbook->verifyAdmin("admin", "password");
-$gbook->addPost("Jmeno", "Predmet", "Text");
+//echo $gbook->verifyAdmin("admin", "password");
+//$gbook->addPost("Jmeno", "Predmet", "Text");
 //$gbook->deletePost(1);
 ?>
 <!DOCTYPE html>
@@ -18,6 +18,16 @@ $gbook->addPost("Jmeno", "Predmet", "Text");
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
+		<?
+		if isset($_POST["add"])
+		{
+			$name = $_POST["name"];
+			$subject = $_POST["subject"];
+			$text = $_POST["text"];
+			$gbook->addPost($name, $subject, $text);
+			echo "Příspěvek přidán.";
+		}
+		?>
 		<h1>Guest book</h1>
 		<form method="POST" action="<?php echo $_["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
