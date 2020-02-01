@@ -8,7 +8,6 @@ class gbook
     public function __construct($host, $port, $dbname, $user, $pass)
     {
         $dsn = "mysql:host=$host;dbname=$dbname;port=$port";
-        echo $dsn;
         $options = array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
