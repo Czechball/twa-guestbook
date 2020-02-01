@@ -40,8 +40,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		{
 			$user = $_POST["user"];
 			$password = $_POST["password"];
-
-			session_start();
     	if ($gbook->verifyAdmin($user, $password))
     	{
         $_SESSION['username'] = $user;
@@ -56,7 +54,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 
 		if (isset($_POST["logout"]))
 		{
-			session_start();
         unset($_SESSION['username']);
         echo "Odhlášen.";
     	}
