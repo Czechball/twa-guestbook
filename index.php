@@ -27,19 +27,19 @@ foreach ($posts as $row) {
 		<form method="POST" action="<?php echo $_["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
-					<td align=right>Jméno</td>
+					<td align=right valign="top">Jméno</td>
 					<td align=left><input type="text" name="name"></td>
 				</tr>
 				<tr>
-					<td align=right>Předmět</td>
+					<td align=right valign="top">Předmět</td>
 					<td align=left><input type="text" name="subject"></td>
 				</tr>
 				<tr>
-					<td align=right>Text</td>
+					<td align=right valign="top">Text</td>
 					<td align=left><textarea cols="50" rows="5"></textarea></td>
 				</tr>
 				<tr>
-					<td align=right></td>
+					<td align=right valign="top"></td>
 					<td align=left><input type="submit" name="add" value="Odeslat"></td>
 				</tr>
 			</table>
