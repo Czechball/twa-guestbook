@@ -41,7 +41,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 				</tr>
 				<tr>
 					<td align=right valign="top">Text</td>
-					<td align=left><textarea cols="50" rows="5"></textarea></td>
+					<td align=left><textarea name="text" cols="50" rows="5"></textarea></td>
 				</tr>
 				<tr>
 					<td align=right valign="top"></td>
