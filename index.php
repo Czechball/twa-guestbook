@@ -27,6 +27,13 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			$gbook->addPost($name, $subject, $text);
 			echo "Příspěvek přidán.";
 		}
+
+		if (isset($_POST["delete"]))
+		{
+			$id = $_POST["id"];
+			$gbook->deletePost($id);
+			echo "Příspěvek smazán.";
+		}
 		?>
 		<h1>Guest book</h1>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
@@ -54,7 +61,15 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		foreach ($posts as $row)
 		{
 		$row = json_decode(json_encode($row), true);
-    	print "<p><b>". $row["subject"] ."</b><br>". $row["text"] . "<br><span size=-1>". $row["name"]. ", " . $row["date"] . "</span></p>";
+    	print "<p><b>". $row["subject"] ."</b><br>". $row["text"] . "<br><span size=-1>". $row["name"]. ", " . $row["date"] . "</span><br>";
+
+		?>
+		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
+			<input type="hidden" name="id" value="<?php echo $row["id"] ?>">
+			<input type="submit" name="delete" value="Smazat">
+		</form>
+		</p>
+		<?php
 		}
 		?>
 	</body>
