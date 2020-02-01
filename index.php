@@ -7,7 +7,8 @@ $gbook->addPost("Jmeno", "Predmet", "Text");
 //$gbook->deletePost(1);
 $posts = $gbook->getPosts();
 foreach ($posts as $row) {
+	$srow = json_decode(json_encode($row), true);
     //print "<p>" . $row["name"] . "-" . $row["subject"] ."<br/>". $row["text"]. "</p>";
-    var_dump($row);
+    var_dump($srow);
 }
 ?>
