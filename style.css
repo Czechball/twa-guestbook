@@ -69,7 +69,7 @@ a:link {
 }
 
 .delete-button:hover {
-  opacity: 1;
+  opacity: 0.333;
 }
 
 .delete-button::before {
