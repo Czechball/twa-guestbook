@@ -86,19 +86,19 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
     	if ($gbook->verifyAdmin($user, $password))
     	{
         $_SESSION['username'] = $user;
-        echo "You were logged in succesfully.";
+        echo "<div class="box">You were logged in succesfully.</div>";
     	}
     	else
     	{
         unset($_SESSION['username']);
-        echo "Incorrect credentials.";
+        echo "<div class="box">Incorrect credentials.</div>";
     	}
 		}
 
 		if (isset($_POST["logout"]))
 		{
         unset($_SESSION['username']);
-        echo "You were logged out succesfully.";
+        echo "<div class="box">You were logged out succesfully.</div>";
     	}
 		?>
 		<p><h1>Czechball's Guestbook</h1></p>
