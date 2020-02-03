@@ -9,9 +9,9 @@ $subject = $_POST["subject"];
 $text = $_POST["text"];
 if(empty($name) || empty($subject) || empty($text))
 {
-	header('Location: ' . $_SERVER['HTTP_REFERER']. '?add=2');
+	header('Location: ' . split($_SERVER['HTTP_REFERER'],'?')[0] . '?add=2');
 } else {
 	$gbook->addPost($name, $subject, $text);
-	header('Location: ' . $_SERVER['HTTP_REFERER']. '?add=1');
+	header('Location: ' . split($_SERVER['HTTP_REFERER'],'?')[0] . '?add=1');
 }
 ?>
