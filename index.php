@@ -74,7 +74,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 
 		?>
 		<p><i>Not logged in</i></p>
-		<form method="POST" action="addpost.php">
+		<form method="POST">
 			<table>
 				<tr>
 					<td align=right valign="top">Username</td>
@@ -110,7 +110,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</div>
 		<div class="box style2">
 			<h2>Add a post</h2>
-		<form method="POST">
+		<form method="POST" action="addpost.php">
 			<table>
 				<tr>
 					<td align=right valign="top">Nickname</td>
