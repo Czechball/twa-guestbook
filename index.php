@@ -18,6 +18,10 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Czechball's Guestbook">
+	<meta property="og:description" content="An amazing website where you can rate your experience on Half-Life LambdaPosting">
+	<meta property="og:image" content="https://gbook.lambdaposting.games/meta-thumb.png">
+	<meta property="og:url" content="gbook.lambdaposting.games">
 </head>
 	<body>
 		<h1><a href="https://gbook.lambdaposting.games/">Czechball's Guestbook</a></h1>
