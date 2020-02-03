@@ -4,9 +4,6 @@ require_once "gbook.class.php";
 require_once "credentials.php";
 global $gbook;
 $gbook = new gbook($host, $port, $dbname, $user, $pass);
-//echo $gbook->verifyAdmin("admin", "password");
-//$gbook->addPost("Jmeno", "Predmet", "Text");
-//$gbook->deletePost(1);
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
