@@ -74,7 +74,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 
 		?>
 		<p><i>Not logged in</i></p>
-		<form method="POST">
+		<form method="POST" action="addpost.php">
 			<table>
 				<tr>
 					<td align=right valign="top">Username</td>
