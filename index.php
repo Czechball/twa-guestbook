@@ -20,6 +20,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
+		<div class="box">
 		<p><h2>Moderation</h2></p>
 		<?php
 		if (!isset($_SESSION['username']))
@@ -60,6 +61,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			<?php
 		}
 		?>
+		</div>
 		<?php
 		if (isset($_POST["add"]))
 		{
@@ -101,6 +103,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		<p><h1>Czechball's Guestbook</h1></p>
 		<p><i>Please rate your LambdaPosting experience!</i></p>
+		<div class="box">
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
@@ -121,7 +124,9 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 				</tr>
 			</table>
 		</form>
+		</div>
 		<p><h2>Posts</h2></p>
+		<div class="box">
 		<?php 
 		$posts = $gbook->getPosts();
 		foreach ($posts as $row)
@@ -143,4 +148,5 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			}
 		}
 		?>
+		</div>
 	</body>
