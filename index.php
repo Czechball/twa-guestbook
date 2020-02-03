@@ -34,7 +34,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		} 
 		elseif ($_GET["add"] == 2)
 		{
-			print '<div class="box style1 error">Please fill out all text fields.</div>'
+			print '<div class="box style1 error">Please fill out all text fields.</div>';
 		}
 
 		if (isset($_POST["delete"]))
