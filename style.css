@@ -68,7 +68,7 @@ a:link {
   border: none;
 }
 
-.delete-button.hover {
+.delete-button:hover {
   opacity: 1;
 }
 
