@@ -136,7 +136,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
     foreach ($gbook->getPosts() as $row) { 
       $row = json_decode(json_encode($row), true);
   ?>
-    <div class="box message">
+    <div class="box message style3">
       <?php if (isset($_SESSION['username'])) { ?>
       <form method="POST">
         <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
