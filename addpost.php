@@ -7,6 +7,11 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 $name = $_POST["name"];
 $subject = $_POST["subject"];
 $text = $_POST["text"];
-$gbook->addPost($name, $subject, $text);
-header('Location: ' . $_SERVER['HTTP_REFERER']. '?add=1');
+if(empty($name) || empty($subject) || empty($text))
+{
+	header('Location: ' . $_SERVER['HTTP_REFERER']. '?add=2');
+} else {
+	$gbook->addPost($name, $subject, $text);
+	header('Location: ' . $_SERVER['HTTP_REFERER']. '?add=1');
+}
 ?>
