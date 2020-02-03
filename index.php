@@ -103,7 +103,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		<p><h1>Czechball's Guestbook</h1></p>
 		<p><i>Please rate your LambdaPosting experience!</i></p>
-		<div class="box">
+		<div class="box style3">
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
@@ -126,7 +126,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</form>
 		</div>
 		<p><h2>Posts</h2></p>
-		<div class="box style3">
+		<div class="box">
 		<?php 
 		$posts = $gbook->getPosts();
 		foreach ($posts as $row)
