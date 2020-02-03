@@ -20,6 +20,46 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
+		<p><h2>Moderation</h2></p>
+		<?php
+		if (!isset($_SESSION['username']))
+		{
+
+		?>
+		<p><i>Not logged in</i></p>
+		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
+			<table margin="0" padding="2">
+				<tr>
+					<td align=right valign="top">Username</td>
+					<td align=left><input type="text" name="user"></td>
+				</tr>
+				<tr>
+					<td align=right valign="top">Password</td>
+					<td align=left><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td align=right valign="top"></td>
+					<td align=left><input type="submit" name="login" value="Login"></td>
+				</tr>
+			</table>
+		</form>
+		<?php
+		}
+		else
+		{
+			?>
+			<p><i>Logged in</i></p>
+			<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
+			<table margin="0" padding="2">
+				<tr>
+					<td align=right valign="top"></td>
+					<td align=left><input type="submit" name="logout" value="Logout"></td>
+				</tr>
+			</table>
+		</form>
+			<?php
+		}
+		?>
 		<?php
 		if (isset($_POST["add"]))
 		{
@@ -101,46 +141,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</p>
 		<?php
 			}
-		}
-		?>
-		<p><h2>Moderation</h2></p>
-		<?php
-		if (!isset($_SESSION['username']))
-		{
-
-		?>
-		<p><i>Not logged in</i></p>
-		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
-			<table margin="0" padding="2">
-				<tr>
-					<td align=right valign="top">Username</td>
-					<td align=left><input type="text" name="user"></td>
-				</tr>
-				<tr>
-					<td align=right valign="top">Password</td>
-					<td align=left><input type="password" name="password"></td>
-				</tr>
-				<tr>
-					<td align=right valign="top"></td>
-					<td align=left><input type="submit" name="login" value="Login"></td>
-				</tr>
-			</table>
-		</form>
-		<?php
-		}
-		else
-		{
-			?>
-			<p><i>Logged in</i></p>
-			<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
-			<table margin="0" padding="2">
-				<tr>
-					<td align=right valign="top"></td>
-					<td align=left><input type="submit" name="logout" value="Logout"></td>
-				</tr>
-			</table>
-		</form>
-			<?php
 		}
 		?>
 	</body>
