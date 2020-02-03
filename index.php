@@ -138,18 +138,18 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
   <h2>Posts</h2>
   <?php
     foreach ($gbook->getPosts() as $row) { 
-      $row = json_decode(json_encode($row), true);
+      //$row = json_decode(json_encode($row), true);
   ?>
     <div class="box message">
       <?php if (isset($_SESSION['username'])) { ?>
       <form method="POST">
-        <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
+        <input type="hidden" name="id" value="<?php echo $row->id; ?>">
         <button class="delete-button" name="delete"></button>
       </form>
       <?php } ?>
-      <b><?php print htmlspecialchars($row["subject"]) ?></b><br />
-      <?php print htmlspecialchars($row["text"]) ?><br />
-      <?php print htmlspecialchars($row["name"]) ?>, <?php print htmlspecialchars($row["date"]) ?>
+      <b><?php print htmlspecialchars($row->subject) ?></b><br />
+      <?php print htmlspecialchars($row->text) ?><br />
+      <?php print htmlspecialchars($row->name) ?>, <?php print htmlspecialchars($row->date) ?>
     </div>
   <?php } ?>
 	</body>
