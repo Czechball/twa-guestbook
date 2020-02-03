@@ -1,3 +1,8 @@
+html *
+{
+   font-family: Segoe UI !important;
+}
+
 body {
   background: #e2e1e0;
   text-align: center;
