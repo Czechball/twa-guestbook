@@ -138,7 +138,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
   <h2>Posts</h2>
   <?php
     foreach ($gbook->getPosts() as $row) { 
-      //$row = json_decode(json_encode($row), true);
   ?>
     <div class="box message">
       <?php if (isset($_SESSION['username'])) { ?>
