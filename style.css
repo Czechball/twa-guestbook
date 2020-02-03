@@ -33,6 +33,15 @@ h2 {
   width: 450px;
 }
 
+.message {
+  background: #E0E2E2;
+  border-radius: 2px;
+  padding: 10px;
+  margin: 0 auto;
+  position: relative;
+  width: 380px;
+}
+
 .button {
   background: #fff;
   border-radius: 3px;
