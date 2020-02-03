@@ -21,7 +21,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 </head>
 	<body>
 		<div class="box style3">
-		<p><h2>Moderation</h2></p>
+		<h2>Moderation</h2>
 		<?php
 		if (!isset($_SESSION['username']))
 		{
@@ -101,7 +101,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
         print '<div class="box style1">You were logged out succesfully.</div>';
     	}
 		?>
-		<p><h1>Czechball's Guestbook</h1></p>
+		<h1>Czechball's Guestbook</h1>
 		<p><i>Please rate your LambdaPosting experience!</i></p>
 		<div class="box style3">
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
@@ -126,7 +126,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</form>
 		</div>
 		<div class="box">
-		<p><h2>Posts</h2></p>
+		<h2>Posts</h2>
 		<?php 
 		$posts = $gbook->getPosts();
 		foreach ($posts as $row)
