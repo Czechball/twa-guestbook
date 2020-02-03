@@ -5,13 +5,11 @@ html *
 
 body {
   background: #e2e1e0;
-  text-align: center;
 }
 
 .box {
   background: #fff;
   border-radius: 2px;
-  display: inline-block;
   /*height: fit-content;*/
   min-height: 50px;
   margin: 1rem;
