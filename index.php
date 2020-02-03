@@ -138,7 +138,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		{
 		if (isset($_SESSION['username']))
 			{
-				printf '<div class="box message">';
+				print '<div class="box message">';
 		?>
 				<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 				<input type="hidden" name="id" value="<?php echo $row["id"] ?>">
