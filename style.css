@@ -5,15 +5,15 @@ html *
 
 body {
   background: #e2e1e0;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .box {
   background: #fff;
   border-radius: 2px;
   padding: 10px;
-  margin: 0 auto;
-  position: relative;
-  width: 450px;
+  margin: 10px 0;
 }
 
 .messages {
