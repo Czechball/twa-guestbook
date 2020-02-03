@@ -25,6 +25,10 @@ a:visited {
   color: black;
 }
 
+a:link {
+  color: black;
+}
+
 .box {
   background: #fff;
   border-radius: 2px;
