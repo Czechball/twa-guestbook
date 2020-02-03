@@ -104,6 +104,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		</div>
 		<div class="box style3">
+			<h2>Add a post</h2>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table>
 				<tr>
