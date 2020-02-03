@@ -67,12 +67,14 @@ a:link {
 }
 
 .delete-button {
+  margin: 0 auto;
   float: right;
   background: transparent;
   border: none;
 }
 
 .delete-button::before {
+  margin: 0 auto;
   display: block;
   width: 14px;
   height: 16px;
