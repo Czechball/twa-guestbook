@@ -150,5 +150,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		{
 		$row = json_decode(json_encode($row), true);
     	print '<b>'. htmlspecialchars($row["subject"]) ."</b><br>". htmlspecialchars($row["text"]) . "<br>". htmlspecialchars($row["name"]). ", " . $row["date"]."</div>\n";
+    	}
 		?>
 	</body>
