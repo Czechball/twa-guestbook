@@ -133,7 +133,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		<div class="box style3">
 		<h2>Posts</h2>
 		<?php 
-		$posts = $gbook->getPosts();
 		if (isset($_SESSION['username']))
 			{
 				print '<div class="box message">';
@@ -148,6 +147,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			}
 		foreach ($posts as $row)
 		{
+		$posts = $gbook->getPosts();
 		$row = json_decode(json_encode($row), true);
     	print '<b>'. htmlspecialchars($row["subject"]) ."</b><br>". htmlspecialchars($row["text"]) . "<br>". htmlspecialchars($row["name"]). ", " . $row["date"]."</div>\n";
     	}
