@@ -29,14 +29,14 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			$subject = $_POST["subject"];
 			$text = $_POST["text"];
 			$gbook->addPost($name, $subject, $text);
-			print '<div class="box style1">Post added.</div>';
+			print '<div class="box style1 success">Post added.</div>';
 		}
 
 		if (isset($_POST["delete"]))
 		{
 			$id = $_POST["id"];
 			$gbook->deletePost($id);
-			echo '<div class="box style1">Post deleted.</div>';
+			echo '<div class="box style1 success">Post deleted.</div>';
 		}
 
 		if (isset($_POST["login"]))
@@ -46,19 +46,19 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
     	if ($gbook->verifyAdmin($user, $password))
     	{
         $_SESSION['username'] = $user;
-        print '<div class="box style1">You were logged in succesfully.</div>';
+        print '<div class="box style1 success">You were logged in succesfully.</div>';
     	}
     	else
     	{
         unset($_SESSION['username']);
-        print '<div class="box style1">Incorrect credentials.</div>';
+        print '<div class="box style1 error">Incorrect credentials.</div>';
     	}
 		}
 
 		if (isset($_POST["logout"]))
 		{
         unset($_SESSION['username']);
-        print '<div class="box style1">You were logged out succesfully.</div>';
+        print '<div class="box style1 success">You were logged out succesfully.</div>';
     	}
 		?>
 				<div class="box style3">
