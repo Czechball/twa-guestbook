@@ -143,9 +143,9 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
         <button class="delete-button" name="delete"></button>
       </form>
       <?php } ?>
-      <b><?php htmlspecialchars($row["subject"]) ?></b><br />
-      <?php htmlspecialchars($row["text"]) ?><br />
-      <?php htmlspecialchars($row["name"]) ?>, <?php htmlspecialchars($row["date"]) ?>
+      <b><?php print htmlspecialchars($row["subject"]) ?></b><br />
+      <?php print htmlspecialchars($row["text"]) ?><br />
+      <?php print htmlspecialchars($row["name"]) ?>, <?php print htmlspecialchars($row["date"]) ?>
     </div>
   <?php } ?>
 	</body>
