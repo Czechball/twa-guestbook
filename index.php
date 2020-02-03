@@ -108,7 +108,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		}
 		?>
 		</div>
-		<div class="box style3">
+		<div class="box">
 			<h2>Add a post</h2>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table>
@@ -131,7 +131,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			</table>
 		</form>
 		</div>
-		<div class="box style3">
+		<div class="box">
   <h2>Posts</h2>
   <?php
     foreach ($gbook->getPosts() as $row) { 
