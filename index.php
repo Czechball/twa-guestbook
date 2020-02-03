@@ -66,7 +66,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
         print '<div class="box style1 success">You were logged out succesfully.</div>';
     	}
 		?>
-				<div class="box">
+				<div class="box style2">
 		<h2>Moderation</h2>
 		<?php
 		if (!isset($_SESSION['username']))
