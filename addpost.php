@@ -8,5 +8,5 @@ $name = $_POST["name"];
 $subject = $_POST["subject"];
 $text = $_POST["text"];
 $gbook->addPost($name, $subject, $text);
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ' . $_SERVER['HTTP_REFERER']. '?add=1');
 ?>
