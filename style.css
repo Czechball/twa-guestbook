@@ -20,7 +20,6 @@ body {
 .messages {
   background: #fff;
   border-radius: 2px;
-  display: inline-block;
   /*height: fit-content;*/
   min-height: 50px;
   margin: 1rem;
@@ -32,7 +31,6 @@ body {
 .button {
   background: #fff;
   border-radius: 3px;
-  display: inline-block;
   height: 20px;
   margin: 0.2rem;
   position: absolute;
