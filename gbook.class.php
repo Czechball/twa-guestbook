@@ -94,7 +94,7 @@ class gbook
         $stmt->bindParam(':username', $name);
         $stmt->execute();
         $dotaz = $stmt->fetch(PDO::FETCH_OBJ);
-        return(password_verify($password, $dotaz[0]));
+        return(password_verify($password, $dotaz->password));
     }
 
 }
