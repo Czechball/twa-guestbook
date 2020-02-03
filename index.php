@@ -137,14 +137,13 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		foreach ($posts as $row)
 		{
 		$row = json_decode(json_encode($row), true);
-    	print '<div class="box message"><b>'. htmlspecialchars($row["subject"]) ."</b><br>". htmlspecialchars($row["text"]) . "<br>". htmlspecialchars($row["name"]). ", " . $row["date"];
-
+    	print '<div class="box message"><b>'. htmlspecialchars($row["subject"]) ."</b><br>". htmlspecialchars($row["text"]) . "<br>". htmlspecialchars($row["name"]). ", " . $row["date"]."\n";
 		if (isset($_SESSION['username']))
 			{
 
 
 		?>
-			<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
+<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 				<input type="hidden" name="id" value="<?php echo $row["id"] ?>">
 				<button class="delete-button" name="delete"></button>
 			</form>
