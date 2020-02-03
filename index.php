@@ -125,8 +125,8 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			</table>
 		</form>
 		</div>
-		<p><h2>Posts</h2></p>
 		<div class="box">
+		<p><h2>Posts</h2></p>
 		<?php 
 		$posts = $gbook->getPosts();
 		foreach ($posts as $row)
