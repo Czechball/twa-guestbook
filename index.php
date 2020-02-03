@@ -69,14 +69,14 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			$subject = $_POST["subject"];
 			$text = $_POST["text"];
 			$gbook->addPost($name, $subject, $text);
-			echo "Příspěvek přidán.";
+			print '<div class="box">Post added.</div>';
 		}
 
 		if (isset($_POST["delete"]))
 		{
 			$id = $_POST["id"];
 			$gbook->deletePost($id);
-			echo "Příspěvek smazán.";
+			echo '<div class="box">Post deleted.</div>';
 		}
 
 		if (isset($_POST["login"]))
