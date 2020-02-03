@@ -1,12 +1,8 @@
-html *
-{
-   font-family: 'IBM Plex Sans', sans-serif !important;
-}
-
 body {
   background: #e2e1e0;
   max-width: 800px;
   margin: 0 auto;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 h1 {
