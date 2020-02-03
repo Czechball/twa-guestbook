@@ -28,13 +28,16 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		<h1><a href="https://gbook.lambdaposting.games/">Czechball's Guestbook</a></h1>
 		<i>Please rate your <a href="https://lambdaposting.games/">LambdaPosting experience!</a></i>
 		<?php
-		if ($_GET["add"] == 1)
+		if (isset($_GET["add"]))
 		{
-			print '<div class="box style1 success">Post added.</div>';
-		} 
-		elseif ($_GET["add"] == 2)
-		{
-			print '<div class="box style1 error">Please fill out all text fields.</div>';
+			if ($_GET["add"] == 1)
+			{
+				print '<div class="box style1 success">Post added.</div>';
+			} 
+			elseif ($_GET["add"] == 2)
+			{
+				print '<div class="box style1 error">Please fill out all text fields.</div>';
+			}
 		}
 
 		if (isset($_POST["delete"]))
