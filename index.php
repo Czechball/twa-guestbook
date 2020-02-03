@@ -20,6 +20,8 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
+		<h1>Czechball's Guestbook</h1>
+		<i>Please rate your LambdaPosting experience!</i>
 		<div class="box style3">
 		<h2>Moderation</h2>
 		<?php
@@ -101,8 +103,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
         print '<div class="box style1">You were logged out succesfully.</div>';
     	}
 		?>
-		<h1>Czechball's Guestbook</h1>
-		<p><i>Please rate your LambdaPosting experience!</i></p>
 		<div class="box style3">
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
