@@ -44,7 +44,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
     	if ($gbook->verifyAdmin($user, $password))
     	{
         $_SESSION['username'] = $user;
-        echo "You were loggen in succesfully.";
+        echo "You were logged in succesfully.";
     	}
     	else
     	{
