@@ -13,7 +13,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 
 <head>
 
-	<title>Czechball's Guestbook</title>
+	<title><a href="https://gbook.lambdaposting.games/">Czechball's Guestbook</a></title>
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 	<link rel="stylesheet" href="style.css">
@@ -125,7 +125,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			</table>
 		</form>
 		</div>
-		<div class="box">
+		<div class="box style3">
 		<h2>Posts</h2>
 		<?php 
 		$posts = $gbook->getPosts();
