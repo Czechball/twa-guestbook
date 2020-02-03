@@ -45,13 +45,8 @@ a:link {
   width: 450px;
 }
 
-.message {
-  background: #E0E2E2;
-  border-radius: 2px;
-  padding: 10px;
-  margin: 10px auto;
-  position: relative;
-  width: 600px;
+.message + .message {
+   border-top: 1px solid rgba(0, 0, 0, .075);
 }
 
 .button {
@@ -71,6 +66,10 @@ a:link {
   float: right;
   background: transparent;
   border: none;
+}
+
+.delete-button.hover {
+  opacity: 1;
 }
 
 .delete-button::before {
