@@ -34,11 +34,11 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			<table>
 				<tr>
 					<td align=right valign="top">Username</td>
-					<td align=left><input type="text" name="user"></td>
+					<td align=left><input required type="text" name="user"></td>
 				</tr>
 				<tr>
 					<td align=right valign="top">Password</td>
-					<td align=left><input type="password" name="password"></td>
+					<td align=left><input required type="password" name="password"></td>
 				</tr>
 				<tr>
 					<td align=right valign="top"></td>
@@ -108,15 +108,15 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			<table>
 				<tr>
 					<td align=right valign="top">Nickname</td>
-					<td align=left><input type="text" name="name"></td>
+					<td align=left><input required type="text" name="name"></td>
 				</tr>
 				<tr>
 					<td align=right valign="top">Subject</td>
-					<td align=left><input type="text" name="subject"></td>
+					<td align=left><input required type="text" name="subject"></td>
 				</tr>
 				<tr>
 					<td align=right valign="top">Message</td>
-					<td align=left><textarea name="text" cols="50" rows="5"></textarea></td>
+					<td align=left><textarea required name="text" cols="50" rows="5"></textarea></td>
 				</tr>
 				<tr>
 					<td align=right valign="top"></td>
