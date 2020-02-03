@@ -44,42 +44,44 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
     	if ($gbook->verifyAdmin($user, $password))
     	{
         $_SESSION['username'] = $user;
-        echo "Přihlášen.";
+        echo "You were loggen in succesfully.";
     	}
     	else
     	{
         unset($_SESSION['username']);
-        echo "Nesprávné údaje.";
+        echo "Incorrect credentials.";
     	}
 		}
 
 		if (isset($_POST["logout"]))
 		{
         unset($_SESSION['username']);
-        echo "Odhlášen.";
+        echo "You were logged out succesfully.";
     	}
 		?>
-		<h1>Guest book</h1>
+		<p><h1>Czechball's Guestbook</h1></p>
+		<p><i>Please rate your LambdaPosting experience!</i></p>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
-					<td align=right valign="top">Jméno</td>
+					<td align=right valign="top">Nickname</td>
 					<td align=left><input type="text" name="name"></td>
 				</tr>
 				<tr>
-					<td align=right valign="top">Předmět</td>
+					<td align=right valign="top">Subject</td>
 					<td align=left><input type="text" name="subject"></td>
 				</tr>
 				<tr>
-					<td align=right valign="top">Text</td>
+					<td align=right valign="top">Message</td>
 					<td align=left><textarea name="text" cols="50" rows="5"></textarea></td>
 				</tr>
 				<tr>
 					<td align=right valign="top"></td>
-					<td align=left><input type="submit" name="add" value="Odeslat"></td>
+					<td align=left><input type="submit" name="add" value="Submit"></td>
 				</tr>
 			</table>
 		</form>
+		<p><h2>Posts</h2></p>
 		<?php 
 		$posts = $gbook->getPosts();
 		foreach ($posts as $row)
@@ -101,25 +103,26 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			}
 		}
 		?>
-		<h2>Administrace</h2>
+		<p><h2>Moderation</h2></p>
 		<?php
 		if (!isset($_SESSION['username']))
 		{
 
 		?>
+		<p><i>Not logged in</i></p>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
-					<td align=right valign="top">Jméno</td>
+					<td align=right valign="top">Username</td>
 					<td align=left><input type="text" name="user"></td>
 				</tr>
 				<tr>
-					<td align=right valign="top">Heslo</td>
+					<td align=right valign="top">Password</td>
 					<td align=left><input type="password" name="password"></td>
 				</tr>
 				<tr>
 					<td align=right valign="top"></td>
-					<td align=left><input type="submit" name="login" value="Přihlásit"></td>
+					<td align=left><input type="submit" name="login" value="Login"></td>
 				</tr>
 			</table>
 		</form>
@@ -128,11 +131,12 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		else
 		{
 			?>
+			<p><i>Logged in</i></p>
 			<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table margin="0" padding="2">
 				<tr>
 					<td align=right valign="top"></td>
-					<td align=left><input type="submit" name="logout" value="Odhlásit"></td>
+					<td align=left><input type="submit" name="logout" value="Logout"></td>
 				</tr>
 			</table>
 		</form>
