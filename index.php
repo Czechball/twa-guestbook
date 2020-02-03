@@ -31,7 +31,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		<p><i>Not logged in</i></p>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
-			<table margin="0" padding="2">
+			<table>
 				<tr>
 					<td align=right valign="top">Username</td>
 					<td align=left><input type="text" name="user"></td>
@@ -53,7 +53,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			?>
 			<p><i>Logged in</i></p>
 			<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
-			<table margin="0" padding="2">
+			<table>
 				<tr>
 					<td align=right valign="top"></td>
 					<td align=left><input type="submit" name="logout" value="Logout"></td>
@@ -105,7 +105,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		<div class="box style3">
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
-			<table margin="0" padding="2">
+			<table>
 				<tr>
 					<td align=right valign="top">Nickname</td>
 					<td align=left><input type="text" name="name"></td>
