@@ -125,7 +125,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 					<td align=left><textarea required name="text" cols="50" rows="5"></textarea></td>
 				</tr>
 				<tr>
-					<td align=right valign="top"></td>s
+					<td align=right valign="top"></td>
 					<td align=left><input type="submit" name="add" value="Submit"></td>
 				</tr>
 			</table>
