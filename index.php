@@ -22,7 +22,46 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<body>
 		<h1>Czechball's Guestbook</h1>
 		<i>Please rate your LambdaPosting experience!</i>
-		<div class="box style3">
+		<?php
+		if (isset($_POST["add"]))
+		{
+			$name = $_POST["name"];
+			$subject = $_POST["subject"];
+			$text = $_POST["text"];
+			$gbook->addPost($name, $subject, $text);
+			print '<div class="box style1">Post added.</div>';
+		}
+
+		if (isset($_POST["delete"]))
+		{
+			$id = $_POST["id"];
+			$gbook->deletePost($id);
+			echo '<div class="box style1">Post deleted.</div>';
+		}
+
+		if (isset($_POST["login"]))
+		{
+			$user = $_POST["user"];
+			$password = $_POST["password"];
+    	if ($gbook->verifyAdmin($user, $password))
+    	{
+        $_SESSION['username'] = $user;
+        print '<div class="box style1">You were logged in succesfully.</div>';
+    	}
+    	else
+    	{
+        unset($_SESSION['username']);
+        print '<div class="box style1">Incorrect credentials.</div>';
+    	}
+		}
+
+		if (isset($_POST["logout"]))
+		{
+        unset($_SESSION['username']);
+        print '<div class="box style1">You were logged out succesfully.</div>';
+    	}
+		?>
+				<div class="box style3">
 		<h2>Moderation</h2>
 		<?php
 		if (!isset($_SESSION['username']))
@@ -64,45 +103,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		}
 		?>
 		</div>
-		<?php
-		if (isset($_POST["add"]))
-		{
-			$name = $_POST["name"];
-			$subject = $_POST["subject"];
-			$text = $_POST["text"];
-			$gbook->addPost($name, $subject, $text);
-			print '<div class="box style1">Post added.</div>';
-		}
-
-		if (isset($_POST["delete"]))
-		{
-			$id = $_POST["id"];
-			$gbook->deletePost($id);
-			echo '<div class="box style1">Post deleted.</div>';
-		}
-
-		if (isset($_POST["login"]))
-		{
-			$user = $_POST["user"];
-			$password = $_POST["password"];
-    	if ($gbook->verifyAdmin($user, $password))
-    	{
-        $_SESSION['username'] = $user;
-        print '<div class="box style1">You were logged in succesfully.</div>';
-    	}
-    	else
-    	{
-        unset($_SESSION['username']);
-        print '<div class="box style1">Incorrect credentials.</div>';
-    	}
-		}
-
-		if (isset($_POST["logout"]))
-		{
-        unset($_SESSION['username']);
-        print '<div class="box style1">You were logged out succesfully.</div>';
-    	}
-		?>
 		<div class="box style3">
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<table>
