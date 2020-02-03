@@ -20,7 +20,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 	<body>
-		<div class="box">
+		<div class="box style3">
 		<p><h2>Moderation</h2></p>
 		<?php
 		if (!isset($_SESSION['username']))
@@ -69,7 +69,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			$subject = $_POST["subject"];
 			$text = $_POST["text"];
 			$gbook->addPost($name, $subject, $text);
-			print '<div class="box">Post added.</div>';
+			print '<div class="box style1">Post added.</div>';
 		}
 
 		if (isset($_POST["delete"]))
@@ -126,7 +126,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</form>
 		</div>
 		<p><h2>Posts</h2></p>
-		<div class="box">
+		<div class="box style3">
 		<?php 
 		$posts = $gbook->getPosts();
 		foreach ($posts as $row)
