@@ -150,10 +150,9 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		</form>
 		</div>
 		<?php
-			}
-			else
+			} else
 				{
-					print "</div>"
+					print "</div>";
 				}
 		}
 		?>
