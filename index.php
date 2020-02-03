@@ -146,7 +146,6 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 			} else {
 				print '<div class="box message">';
 			}
-		}
 		foreach ($posts as $row)
 		{
 		$row = json_decode(json_encode($row), true);
