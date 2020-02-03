@@ -21,8 +21,6 @@ class gbook
                 echo "Nelze se připojit k MySQL: ";  echo $e->getMessage();
             }
     }
-
-
     public function addPost($name, $subject, $text)
     {
         function getUserIpAddr()
@@ -92,7 +90,11 @@ class gbook
 
     public function verifyAdmin($name, $password)
     {
-        return ($name == "admin" && $password == "password");
+        $stmt = $this->conn->prepare("SELECT password FROM `credentials` WHERE username = :username ORDER BY id ASC;");
+        $stmt->bindParam(':username', $name);
+        $stmt->execute();
+        $dotaz = $stmt->fetch(PDO::FETCH_OBJ);
+        return(password_verify($password, $dotaz[0]));
     }
 
 }
