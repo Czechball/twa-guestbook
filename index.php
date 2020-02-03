@@ -17,6 +17,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 	<meta charset="UTF-8">
 	<link rel="shortcut icon" type="image/png" href="favicon.png"/>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:title" content="Czechball's Guestbook">
 	<meta property="og:description" content="Amazing website where you can rate your experience on Half-Life LambdaPosting">
