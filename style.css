@@ -45,6 +45,10 @@ a:link {
    border-top: 1px solid rgba(0, 0, 0, .075);
 }
 
+.message:nth-child(2) {
+  filter: invert(1);
+}
+
 .button {
   background: #fff;
   border-radius: 3px;
