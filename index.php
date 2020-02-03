@@ -146,7 +146,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		?>
 		<form method="POST" action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>">
 			<input type="hidden" name="id" value="<?php echo $row["id"] ?>">
-			<input type="submit" name="delete" value="Delete post">
+			<button class="delete-button" name="delete"></button>
 		</form>
 		</p>
 		<?php
