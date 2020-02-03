@@ -28,12 +28,8 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 		<h1><a href="https://gbook.lambdaposting.games/">Czechball's Guestbook</a></h1>
 		<i>Please rate your <a href="https://lambdaposting.games/">LambdaPosting experience!</a></i>
 		<?php
-		if (isset($_POST["add"]))
+		if (isset($_GET["add"]))
 		{
-			$name = $_POST["name"];
-			$subject = $_POST["subject"];
-			$text = $_POST["text"];
-			$gbook->addPost($name, $subject, $text);
 			print '<div class="box style1 success">Post added.</div>';
 		}
 
