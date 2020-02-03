@@ -93,8 +93,10 @@ class gbook
         $stmt = $this->conn->prepare("SELECT password FROM `credentials` WHERE username = :username ORDER BY id ASC;");
         $stmt->bindParam(':username', $name);
         $stmt->execute();
+        if($stmt->rowCount() == 0)
+            return false;
         $dotaz = $stmt->fetch(PDO::FETCH_OBJ);
-        return(password_verify($password, @$dotaz->password));
+        return(password_verify($password, $dotaz->password));
     }
 
 }
