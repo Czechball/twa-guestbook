@@ -14,7 +14,7 @@ body {
   min-height: 50px;
   margin: 1rem;
   position: relative;
-  width: 30%;
+  width: 300px;
 }
 
 .messages {
@@ -25,7 +25,7 @@ body {
   min-height: 50px;
   margin: 1rem;
   position: relative;
-  width: 80%;
+  width: 450px;
   text-align: left;
 }
 
