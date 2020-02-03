@@ -25,7 +25,7 @@ $gbook = new gbook($host, $port, $dbname, $user, $pass);
 </head>
 	<body>
 		<h1><a href="https://gbook.lambdaposting.games/">Czechball's Guestbook</a></h1>
-		<i>Please rate your LambdaPosting experience!</i>
+		<i>Please rate your <a href="https://lambdaposting.games/">LambdaPosting experience!</a></i>
 		<?php
 		if (isset($_POST["add"]))
 		{
